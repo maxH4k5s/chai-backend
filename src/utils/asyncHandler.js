@@ -29,6 +29,9 @@ export { asyncHandler }
 
 
 
+
+
+// second method with async/await
 // const asyncHandler = (fn) => {}
 // const asyncHandler = (fn) => {() => {}}
 // const asyncHandler = (fn) => async () => {}
