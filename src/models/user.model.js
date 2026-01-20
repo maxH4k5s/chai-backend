@@ -109,7 +109,7 @@ userSchema.methods.generateAccessToken = function () {
 
 // Method to generate refresh token (long-lived token)
 userSchema.methods.generateRefreshToken = function () {
-  return jwt.sign(
+  return jwt.sign (
     {
       _id: this._id,
     },
