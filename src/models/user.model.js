@@ -75,14 +75,12 @@ const userSchema = new Schema(
 
 // This runs BEFORE saving user to database
 // Used to encrypt password
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function () {
 
   // If password is NOT changed, skip encryption
-  if (!this.isModified("password")) return next();
+  if (!this.isModified("password")) return;
   // Encrypt password using bcrypt
    this.password = await bcrypt.hash(this.password, 10);
-
-  next(); // move to next middleware
 });
 
 // Custom method to check if password is correct during login
